@@ -1,0 +1,43 @@
+{# templates/security/login.html.twig #}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Connexion - Projet Symfony</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <ul>
+          <li><a href="{{ path('homepage') }}">Accueil</a></li>
+          <li class="right"><a href="{{ path('login') }}">Connexion</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section class="login-form">
+        <h1>Connexion</h1>
+        {% if error %}
+          <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+        <form action="{{ path('login') }}" method="post">
+          <div>
+            <label for="email">Email :</label>
+            <input type="text" id="email" name="_username" value="{{ last_username }}" required>
+          </div>
+          <div>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="_password" required>
+          </div>
+          <button type="submit">Se connecter</button>
+        </form>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 Projet Symfony. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

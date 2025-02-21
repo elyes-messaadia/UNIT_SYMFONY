@@ -1,0 +1,32 @@
+{# templates/home.html.twig #}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Accueil - Projet Symfony</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <ul>
+          <li><a href="{{ path('homepage') }}">Accueil</a></li>
+          {# Menu de connexion à droite #}
+          <li class="right"><a href="{{ path('login') }}">Connexion</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section class="hero">
+        <h1>Bienvenue sur votre application Symfony</h1>
+        <p>Apprenez à coder sous Symfony grâce à nos ressources.</p>
+        <a class="btn" href="{{ path('learn_symfony') }}">En savoir plus</a>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 Projet Symfony. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>
